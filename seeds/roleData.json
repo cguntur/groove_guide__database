@@ -1,0 +1,14 @@
+[
+    {
+        "role_name": "Admin"
+    },
+    {
+        "role_name": "Gold Member"
+    },
+    {
+        "role_name": "Silver Member"
+    },
+    {
+        "role_name": "Platinum Member"
+    }
+  ]

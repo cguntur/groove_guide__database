@@ -1,0 +1,23 @@
+[
+    {
+      "address_1": "345 Test Street",
+      "address_2": null,
+      "city": "Test City",
+      "state": "Test State",
+      "country": "Test Country"
+    },
+    {
+        "address_1": "345 Hart Rd",
+        "address_2": null,
+        "city": "Tucson",
+        "state": "AZ",
+        "country": "US"
+    },
+    {
+        "address_1": "1089 1st Street",
+        "address_2": null,
+        "city": "New York",
+        "state": "New York",
+        "country": "US"
+    }
+  ]
