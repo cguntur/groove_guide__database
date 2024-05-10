@@ -4,3 +4,5 @@ const Member = require('./Member');
 const Contact = require('./Contact');
 
 module.exports = { Role, Member, Contact };
+
+//add foreign key associations
