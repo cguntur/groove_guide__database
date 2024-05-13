@@ -22,7 +22,7 @@ module.exports = Role;
 // Path: models/Member.js
 
 
-const Member = require('./Member'); // Import 'Member' from the correct file
+const Member = require('./Member');
 
 Member.associate = function(models) {
     Member.belongsTo(models.Role, {
