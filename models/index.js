@@ -71,4 +71,29 @@ exports.create = (req, res) => {
 
 };
 
+// Create a new instance of a Member
+// Path: controllers/member.js
+
+const db = require('../models');
+const Member = db.Member;
+
+exports.create = (req, res) => {
+    
+        const member = {
+            name: req.body.propertyName // Replace 'propertyName' with the actual property name from the request body
+        };
+    
+        Member.create(member)
+    
+        .then(data => {
+            res.send(data);
+        })
+        .catch(err => {
+            res.status(500).send({
+                message: err.message || "Some error occurred while creating the Member."
+            });
+        });
+    
+    };
+
 
