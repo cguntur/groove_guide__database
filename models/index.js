@@ -8,7 +8,7 @@ module.exports = { Role, Member, Contact };
 //add foreign key associations
 // Path: models/Role.js
 
-const { Role } = require('./Role'); // Import 'Role' from the correct file
+const { Role } = require('./Role');
 
 Role.associate = function(models) {
     Role.hasMany(models.Member, {
@@ -18,5 +18,18 @@ Role.associate = function(models) {
 
 module.exports = Role;
 
+
+// Path: models/Member.js
+
+
+const Member = require('./Member'); // Import 'Member' from the correct file
+
+Member.associate = function(models) {
+    Member.belongsTo(models.Role, {
+        foreignKey: 'roleId'
+    });
+}
+
+module.exports = Member;
 
 
