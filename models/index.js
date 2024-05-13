@@ -97,3 +97,40 @@ exports.create = (req, res) => {
     };
 
 
+
+// Create a new instance of a Contact
+// Path: controllers/contact.js
+
+const db = require('../models');
+const Contact = db.Contact;
+
+exports.create = (req, res) => {
+        
+            const contact = {
+                phone: req.body.propertyName // Replace 'propertyName' with the actual property name from the request body
+            };
+
+            Contact.create(contact)
+
+            .then(data => {
+                res.send(data);
+            })
+            .catch(err => {
+                res.status(500).send({
+                    message: err.message || "Some error occurred while creating the Contact."
+                });
+            });
+        
+        };
+
+
+// Create a new instance of a Role
+// Path: routes/role.js
+
+const express = require('express');
+const router = express.Router();
+const role = require('../controllers/role');
+
+router.post('/', role.create);
+
+module.exports = router;
