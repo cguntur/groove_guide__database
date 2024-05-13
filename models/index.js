@@ -32,4 +32,43 @@ Member.associate = function(models) {
 
 module.exports = Member;
 
+// Path: models/Contact.js
+
+
+const { Contact } = require('./Contact'); // Import 'Contact' from the correct file
+
+Contact.associate = function(models) {
+    Contact.belongsTo(models.Member, {
+        foreignKey: 'memberId'
+    });
+}
+
+module.exports = Contact;
+
+
+// Create a new instance of a Role
+// Path: controllers/role.js
+
+const db = require('../models');
+const Role = db.Role;
+
+exports.create = (req, res) => {
+
+    const role = {
+        title: req.body.title // Replace 'req.body.' with the actual property name from the request body
+    };
+
+    Role.create(role)
+
+    .then(data => {
+        res.send(data);
+    })
+    .catch(err => {
+        res.status(500).send({
+            message: err.message || "Some error occurred while creating the Role."
+        });
+    });
+
+};
+
 
