@@ -8,7 +8,6 @@ module.exports = { Role, Member, Contact };
 //add foreign key associations
 // Path: models/Role.js
 
-const { Role } = require('./Role');
 
 Role.associate = function(models) {
     Role.hasMany(models.Member, {
