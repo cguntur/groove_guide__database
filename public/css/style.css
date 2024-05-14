@@ -1,0 +1,87 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-image: url("/images/lights_two.jpg");
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+  background-color: #ccc;
+  background-size: cover;
+  min-height: 1000px;
+  height: auto;
+}
+
+header {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 20px 50px;
+  box-shadow: 0 1px 8px #ddd;
+  background: #000;
+}
+header #title {
+  color: #fff;
+  margin-right: auto;
+}
+header li {
+  list-style: none;
+  display: inline-block;
+  padding: 0 20px;
+}
+header li a {
+  text-decoration: none;
+  color: #fff;
+  font-size: 25px;
+  transition: all 0.3s ease 0s;
+}
+header li a:hover {
+  color: #962455;
+}
+
+main {
+  margin: 50px;
+  padding: 20px;
+}
+main #loginPage {
+  display: flex;
+  justify-content: center;
+}
+main #loginPage h1 {
+  color: #fff;
+  font-size: 45px;
+  text-align: center;
+}
+main #loginPage .box {
+  border: #fff 5px solid;
+  border-radius: 10px;
+  background: rgba(150, 36, 85, 0.9);
+  padding: 20px;
+  margin: 20px;
+}
+main #loginPage .box .formField .label {
+  color: #fff;
+  font-size: 25px;
+  min-width: 150px;
+  display: inline-block;
+  padding: 10px;
+}
+main #loginPage .box .formField .input {
+  padding: 10px;
+  background: #D9D9D9;
+  border: none;
+  border-radius: 15px;
+  min-width: 200px;
+}
+main #loginPage h2 {
+  color: #fff;
+  text-align: center;
+  font-size: 35px;
+  margin-bottom: 15px;
+}
+main #loginPage .button {
+  font-size: 30px;
+}
+
+/*# sourceMappingURL=style.css.map */
