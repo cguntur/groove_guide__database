@@ -1,37 +1,37 @@
 const router = require('express').Router();
 const { Member }=require("../../models")
-// const withAuth = require('../../utils/auth');
+const withAuth = require('../../utils/auth');
  
-//GET all members
-// router.get('/', (req, res) => {
-    // Member.findAll()
-//    .then(dbMemberData => res.json(dbMemberData))
-//    .catch(err => {
-    //    console.log(err);
-    //    res.status(500).json(err);
-//    });
-// });
-// 
+// GET all members
+router.get('/', withAuth, (req, res) => {
+    Member.findAll()
+   .then(dbMemberData => res.json(dbMemberData))
+   .catch(err => {
+       console.log(err);
+       res.status(500).json(err);
+   });
+});
+
 // GET one member by id
-// router.get('/:id', (req, res) => {
-    // Member.findOne({
-        // where: {
-            // id: req.params.id
-        // }
-    // })
-//    .then(dbMemberData => {
-        // if (!dbMemberData) {
-            // res.status(404).json({ message: 'No member found with this id' });
-            // return;
-        // }
-        // res.json(dbMemberData);
-    // })
-//    .catch(err => {
-        // console.log(err);
-        // res.status(500).json(err);
-    // });
-// });
-// 
+router.get('/:id', withAuth, (req, res) => {
+    Member.findOne({
+        where: {
+            id: req.params.id
+        }
+    })
+   .then(dbMemberData => {
+        if (!dbMemberData) {
+            res.status(404).json({ message: 'No member found with this id' });
+            return;
+        }
+        res.json(dbMemberData);
+    })
+   .catch(err => {
+        console.log(err);
+        res.status(500).json(err);
+    });
+});
+
 router.post('/login', async (req, res) => {
     try {
       const memberData = await Member.findOne({ where: { email: req.body.email } });
@@ -56,7 +56,8 @@ router.post('/login', async (req, res) => {
         req.session.member_id = memberData.id;
         req.session.logged_in = true;
         
-        res.json({ member: memberData, message: 'You are now logged in!' });
+        // res.json({ member: memberData, message: 'You are now logged in!' });
+        res.redirect('/member');
       });
   
     } catch (err) {
@@ -86,6 +87,7 @@ router.post('/signup', async (req, res) => {
         res.status(500).json(err);
     }
 });
+
 
 
 module.exports = router;
