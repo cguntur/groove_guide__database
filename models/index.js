@@ -17,10 +17,7 @@ Role.associate = function(models) {
 
 
 
-
 // Path: models/Member.js
-
-
 
 
 Member.associate = function(models) {
@@ -30,10 +27,7 @@ Member.associate = function(models) {
 }
 
 
-
 // Path: models/Contact.js
-
-
 
 
 Contact.associate = function(models) {
@@ -44,11 +38,8 @@ Contact.associate = function(models) {
 
 
 
-
 // Create a new instance of a Role
 // Path: controllers/role.js
-
-
 
 
 exports.create = (req, res) => {
@@ -75,7 +66,6 @@ exports.create = (req, res) => {
 
 
 
-
 exports.create = (req, res) => {
     
         const member = {
@@ -99,8 +89,6 @@ exports.create = (req, res) => {
 
 // Create a new instance of a Contact
 // Path: controllers/contact.js
-
-
 
 
 exports.create = (req, res) => {
