@@ -1,6 +1,7 @@
-wconst { Model, DataTypes } = require('sequelize');
+const { Model, DataTypes } = require('sequelize');
 const bcrypt = require('bcrypt');
 const sequelize = require('../config/connection');
+
 
 class Member extends Model {
     checkPassword(loginPw) {
@@ -58,5 +59,6 @@ class Member extends Model {
       modelName: 'member',
     }
   );
+
 
   module.exports = Member;
