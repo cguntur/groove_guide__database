@@ -1,0 +1,1 @@
+//Create an event listener and added to the contact table
