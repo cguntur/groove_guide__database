@@ -1,6 +1,6 @@
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
-
+const Member = require('./Member');
 class Contact extends Model {}
 
 Contact.init(
@@ -49,5 +49,8 @@ Contact.init(
     modelName: 'contact'
   }
 );
+
+
+
 
 module.exports = Contact;

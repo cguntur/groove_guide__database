@@ -10,9 +10,9 @@ router.get('/login', async (req, res) => {
   res.render('login_signup');
 });
 
-router.get('/profile', async (req, res) => {
+router.get('/member', async (req, res) => {
   // sending rendered Handlebars.js template to respod
-  res.render('profilepage');
+  res.render('member_page');
 });
 
 

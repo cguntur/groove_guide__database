@@ -1,3 +1,9 @@
+/* Variables */
+$text-color: #fff;
+$border-color: #D9D9D9;
+$bck-color: rgba(150, 36, 85, 0.9);
+$header-bck-color: #000;
+$link-color: #962455;
 * {
     margin: 0;
     padding: 0;
@@ -18,11 +24,11 @@ header{
     justify-content: flex-end;
     align-items: center;
     padding: 20px 50px;
-    box-shadow: 0 1px 8px #ddd;
-    background: #000;
+    box-shadow: 0 1px 8px $border-color;
+    background: $header-bck-color;
 
     #title{
-        color:#fff;
+        color: $text-color;
         margin-right: auto;
     }
 
@@ -38,7 +44,7 @@ header{
             transition: all 0.3s ease 0s;
 
             &:hover{
-                color: #962455;
+                color: $link-color;
             }
         }
     }
@@ -48,50 +54,58 @@ main{
     margin: 50px;
     padding: 20px;
 
+    h1{
+        color: #fff;
+        font-size: 45px;
+        text-align: center;
+    }
+
+    h2{
+        color: #fff;
+        text-align: center;
+        font-size: 35px;
+        margin-bottom: 15px;
+    }
+
+    p{
+        font-size: 14px;
+        color: #fff;
+    }
+
+    .button, .button-primary{
+        font-size:25px;
+    }
+
+    .wrapper, .box{
+        border: #fff 5px solid;
+        border-radius: 10px;
+        background: rgba(150, 36, 85, 0.9);
+        padding: 20px;
+        margin: 20px;
+
+        .formField{
+            .label{
+                color: #fff;
+                font-size: 25px;
+                min-width: 150px;
+                display: inline-block;
+                padding: 10px;
+            }
+
+            .input{
+                padding: 10px;
+                background: #D9D9D9;
+                border: none;
+                border-radius: 15px;
+                min-width: 200px;
+            }
+        }
+    }
+
     #loginPage{
         display: flex;
         justify-content: center;
 
-        h1{
-            color: #fff;
-            font-size: 45px;
-            text-align: center;
-        }
-        .box{
-            border: #fff 5px solid;
-            border-radius: 10px;
-            background: rgba(150, 36, 85, 0.9);
-            padding: 20px;
-            margin: 20px;
-
-            .formField{
-                .label{
-                    color: #fff;
-                    font-size: 25px;
-                    min-width: 150px;
-                    display: inline-block;
-                    padding: 10px;
-                }
-
-                .input{
-                    padding: 10px;
-                    background: #D9D9D9;
-                    border: none;
-                    border-radius: 15px;
-                    min-width: 200px;
-                }
-            }
-        }
-
-        h2{
-            color: #fff;
-            text-align: center;
-            font-size: 35px;
-            margin-bottom: 15px;
-        }
-
-        .button{
-            font-size:30px;
-        }
+        
     }
 }
