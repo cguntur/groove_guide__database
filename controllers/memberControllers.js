@@ -5,7 +5,13 @@ const router = express.Router();
 // Route to render the form for adding a member
 router.get('/members/add', (req, res) => {
     res.render('addMember'); 
-    // RaddMember.handlebars template
+    // addMember.handlebars template
+});
+
+// Route to render the form for adding a member
+router.get('/members/add', (req, res) => {
+    res.render('addMember'); 
+    // addMember.handlebars template
 });
 
 // Route to render the form for updating a member
