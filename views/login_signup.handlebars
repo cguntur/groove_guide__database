@@ -1,35 +1,52 @@
 <section id="loginPage">
     <!-- Sign-In Section -->
+    <!-- Sign-In Section -->
     <div class="login box">
         <h2>VIP Members Log-in</h2>
-        <form action="/signin" method="POST">
+        <form class="formLogin">
             <div class="formField">
-                <label for="memberId" class="label">Member ID:</label>
-                <input type="text" id="memberId" name="memberId" class="input" required>
+                <label for="memberEmail" class="label">Email</label>
+                <input type="text" id="memberEmail" name="memberEmail" class="input" required>
             </div>
 
             <div class="formField">
-                <label for="vipPassword" class="label">VIP Password:</label>
-                <input type="password" id="vipPassword" name="vipPassword" class="input" required>
+                <label for="memberPassword" class="label">Password:</label>
+                <input type="password" id="memberPassword" name="memberPassword" class="input" required>
             </div>
 
             <button class="button" type="submit">Sign In</button>
         </form>
     </div>
-
     <!-- Sign-Up Section -->
     <div class="signUp box">
         <h2>Not a member? Sign up!</h2>
-        <form action="/signup" method="POST">
+        <form id="signup" class="formField">
+
+            <div class="formField">
+                <label for="name" class="label">Name:</label>
+                <input type="text" id="name-signup" name="name" class="input" required>
+            </div>
+
+            <div class="formField">
+                <label for="role">Choose a membership level:</label>
+                <select name="role" id="role_id">
+                <option value="2">Gold Member</option>
+                <option value="3">Silver Member</option>
+                <option value="4">Platinum Member</option>
+                </select>
+            </div>
+
             <div class="formField">
                 <label for="email" class="label">Email:</label>
-                <input type="email" id="email" name="email" class="input" required>
+                <input type="email" id="email-signup" name="email" class="input" required>
             </div>
 
             <div class="formField">
                 <label for="password" class="label">Password:</label>
-                <input type="password" id="password" name="password" class="input" required>
-            </div>            
+                <input type="password" id="password-signup" name="password" class="input" required>
+            </div>
+
+
             <button class="button" type="submit">Sign Up</button>
         </form>
     </div>
