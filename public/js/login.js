@@ -1,27 +1,26 @@
 const loginFormHandler = async (event) => {
-  event.preventDefault();
-
-  // Collect values from the login form
-  const email = document.querySelector('#memberEmail').value.trim();
-  const password = document.querySelector('#vipPassword').value.trim();
-  console.log('email: ' + email);
-
-  if (email && password) {
+    event.preventDefault();
+  
+    // Collect values from the login form
+    const email = document.querySelector('#memberEmail').value.trim();
+    const password = document.querySelector('#memberPassword').value.trim();
+  
+    if (email && password) {
       // Send a POST request to the API endpoint
-      const response = await fetch('/api/login', {
-          method: 'POST',
-          body: JSON.stringify({ email, password }),
-          headers: { 'Content-Type': 'application/json' },
+      const response = await fetch('/api/member/login', {
+        method: 'POST',
+        body: JSON.stringify({ email, password }),
+        headers: { 'Content-Type': 'application/json' },
       });
-
+  
       if (response.ok) {
-          // If successful, redirect the browser to the member page
-          document.location.replace('/member');
+        // If successful, redirect the browser to the member page
+        document.location.replace('/member');
       } else {
-          alert(response.statusText);
+        alert(response.statusText);
       }
-  }
-};
+    }
+  };
 
 const signupFormHandler = async (event) => {
   event.preventDefault();
@@ -46,9 +45,8 @@ const signupFormHandler = async (event) => {
 };
 
 document
-  .querySelector('#login')
+  .querySelector('.formLogin')
   .addEventListener('submit', loginFormHandler);
-
 document
   .querySelector('.signup-form')
   .addEventListener('submit', signupFormHandler);
