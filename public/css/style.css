@@ -1,3 +1,4 @@
+/* Variables */
 * {
   margin: 0;
   padding: 0;
@@ -18,7 +19,7 @@ header {
   justify-content: flex-end;
   align-items: center;
   padding: 20px 50px;
-  box-shadow: 0 1px 8px #ddd;
+  box-shadow: 0 1px 8px #D9D9D9;
   background: #000;
 }
 header #title {
@@ -44,44 +45,48 @@ main {
   margin: 50px;
   padding: 20px;
 }
-main #loginPage {
-  display: flex;
-  justify-content: center;
-}
-main #loginPage h1 {
+main h1 {
   color: #fff;
   font-size: 45px;
   text-align: center;
 }
-main #loginPage .box {
+main h2 {
+  color: #fff;
+  text-align: center;
+  font-size: 35px;
+  margin-bottom: 15px;
+}
+main p {
+  font-size: 14px;
+  color: #fff;
+}
+main .button, main .button-primary {
+  font-size: 25px;
+}
+main .wrapper, main .box {
   border: #fff 5px solid;
   border-radius: 10px;
   background: rgba(150, 36, 85, 0.9);
   padding: 20px;
   margin: 20px;
 }
-main #loginPage .box .formField .label {
+main .wrapper .formField .label, main .box .formField .label {
   color: #fff;
   font-size: 25px;
   min-width: 150px;
   display: inline-block;
   padding: 10px;
 }
-main #loginPage .box .formField .input {
+main .wrapper .formField .input, main .box .formField .input {
   padding: 10px;
   background: #D9D9D9;
   border: none;
   border-radius: 15px;
   min-width: 200px;
 }
-main #loginPage h2 {
-  color: #fff;
-  text-align: center;
-  font-size: 35px;
-  margin-bottom: 15px;
-}
-main #loginPage .button {
-  font-size: 30px;
+main #loginPage {
+  display: flex;
+  justify-content: center;
 }
 
 /*# sourceMappingURL=style.css.map */

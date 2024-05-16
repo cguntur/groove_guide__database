@@ -1,5 +1,6 @@
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
+const Member = require('./Member');
 
 class Role extends Model {}
 
@@ -26,5 +27,6 @@ Role.init(
     modelName: 'role'
   }
 );
+
 
 module.exports = Role;
