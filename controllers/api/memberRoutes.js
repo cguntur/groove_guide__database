@@ -69,25 +69,26 @@ router.post('/login', async (req, res) => {
 
 router.post('/signup', async (req, res) => {
     try {
-        // Hash password
-        const hashedPassword = await bcrypt.hash(req.body.password, 10);
-
         // Create new user
-        const newMember = await Member.create({
-            email: req.body.email,
-            password: hashedPassword,
-        });
+        const newMember = await Member.create(req.body)
 
         // We might want to log the user in directly after signup
         // For example, by setting some session variables
+        req.session.save(() => {
+          // saves member id and creates cookie session
+          req.session.member_id = newMember.id;
+          // saves into the cookie session that they are logged in
+          req.session.logged_in = true;
+          // good, signed up
+          res.status(201).json(newMember);
+        })
 
-        res.status(201).json(newMember);
     } catch (err) {
         console.error(err);
         res.status(500).json(err);
     }
 });
 
-
+// if we add an update option for member info, api route goes here with PUT method
 
 module.exports = router;

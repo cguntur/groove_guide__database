@@ -1,16 +1,18 @@
-const path = require('path');
 const express = require('express');
+const path = require('path');
 const session = require('express-session');
 const exphbs = require('express-handlebars');
 const routes = require('./controllers');
 const sequelize = require('./config/connection');
-
 const SequelizeStore = require('connect-session-sequelize')(session.Store);
 
 const app = express();
 const PORT = process.env.PORT || 3001;
 
-const hbs = exphbs.create({  });
+const hbs = exphbs.create({ 
+  defaultLayout: 'main',
+  layoutsDir: path.join(__dirname, 'views/layouts'),
+ });
 
 // Configure + link session object with sequelize store
 const sess = {
