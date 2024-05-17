@@ -10,6 +10,22 @@ router.get('/login', async (req, res) => {
   // sending rendered Handlebars.js template to respod
   res.render('login_signup');
 });
+router.get('/memberHome', async (req, res) => {
+const membercontact = await Contact.findOne({
+  where: {
+    member_id: req.session.member_id
+  }
+
+})
+  if(!membercontact){
+    res.redirect('/member')
+  }
+  else{
+    res.render('memberHome');
+  }
+});
+
+
 
 router.get('/member', async (req, res) => {
   // sending rendered Handlebars.js template to respod
