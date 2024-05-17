@@ -78,7 +78,6 @@ router.post('/logout', (req, res) => {
 
 
 //Create new member
-
 router.post('/signup', async (req, res) => {
     try {
         // Create new user
@@ -102,5 +101,4 @@ router.post('/signup', async (req, res) => {
 });
 
 // if we add an update option for member info, api route goes here with PUT method
-
 module.exports = router;
