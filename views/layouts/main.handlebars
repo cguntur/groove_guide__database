@@ -21,8 +21,15 @@
         <li>
           <a href="/member">Member Access</a>
         </li>
+        {{#if logged_in}}
+        <li>
+          <a id="logoutButton">Logout</a>
+        </li> 
+        {{else}}
         <li>
           <a href="/login">Login</a>
+        </li>  
+        {{/if}}
     </nav>
   </header>
   <main class="container container-fluid mt-5">
@@ -32,6 +39,7 @@
   <footer>
       
   </footer>
+  <script src="/js/navbar.js"></script>
 </body>
 
 </html>
