@@ -20,20 +20,11 @@
     <!-- Sign-Up Section -->
     <div class="signUp box">
         <h2>Not a member? Sign up!</h2>
-        <form id="signup" class="formField">
+        <form id="signup" class="">
 
             <div class="formField">
                 <label for="name" class="label">Name:</label>
                 <input type="text" id="name-signup" name="name" class="input" required>
-            </div>
-
-            <div class="formField">
-                <label for="role">Choose a membership level:</label>
-                <select name="role" id="role_id">
-                <option value="2">Gold Member</option>
-                <option value="3">Silver Member</option>
-                <option value="4">Platinum Member</option>
-                </select>
             </div>
 
             <div class="formField">
@@ -46,6 +37,14 @@
                 <input type="password" id="password-signup" name="password" class="input" required>
             </div>
 
+            <div class="formField">
+                <label for="role" class="label">Choose a membership level:</label>
+                <select name="role" id="role_id" class="input">
+                <option value="2">Gold Member</option>
+                <option value="3">Silver Member</option>
+                <option value="4">Platinum Member</option>
+                </select>
+            </div>
 
             <button class="button" type="submit">Sign Up</button>
         </form>
