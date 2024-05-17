@@ -49,6 +49,7 @@ main h1 {
   color: #fff;
   font-size: 45px;
   text-align: center;
+  margin-bottom: 50px;
 }
 main h2 {
   color: #fff;
@@ -62,6 +63,11 @@ main p {
 }
 main .button, main .button-primary {
   font-size: 25px;
+  position: absolute;
+  bottom: 20px;
+  border-radius: 10px;
+  padding: 15px;
+  background-color: #e8d5df;
 }
 main .wrapper, main .box {
   border: #fff 5px solid;
@@ -69,6 +75,7 @@ main .wrapper, main .box {
   background: rgba(150, 36, 85, 0.9);
   padding: 20px;
   margin: 20px;
+  position: relative;
 }
 main .wrapper .formField .label, main .box .formField .label {
   color: #fff;
@@ -76,6 +83,7 @@ main .wrapper .formField .label, main .box .formField .label {
   min-width: 150px;
   display: inline-block;
   padding: 10px;
+  width: 200px;
 }
 main .wrapper .formField .input, main .box .formField .input {
   padding: 10px;
@@ -83,10 +91,18 @@ main .wrapper .formField .input, main .box .formField .input {
   border: none;
   border-radius: 15px;
   min-width: 200px;
+  width: 200px;
+}
+main .wrapper .formField select, main .box .formField select {
+  width: 220px !important;
+}
+main .wrapper .formField:last-of-type, main .box .formField:last-of-type {
+  margin-bottom: 100px;
 }
 main #loginPage {
   display: flex;
   justify-content: center;
+  flex-wrap: wrap;
 }
 
 /*# sourceMappingURL=style.css.map */
