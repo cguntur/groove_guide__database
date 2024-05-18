@@ -1,9 +1,31 @@
 const router = require('express').Router();
 const { Member, Contact, Role } = require('../models');
+const withAuth = require('../utils/auth');
 
 router.get('/', async (req, res) => {
   // sending rendered Handlebars.js template to respod
   res.render('homepage');
+});
+
+router.get('/contact', async (req, res) => {
+  try {
+    // Get all posts and JOIN with user data
+    const contactData = await Contact.findAll().catch((err) => {
+      res.json(err);
+    });
+
+    // Serialize data so the template can read it
+    const contacts = contactData.map((contact) => contact.get({ plain: true }));
+
+    // Pass serialized data and session flag into template
+    res.render('member_page', { 
+      ...contacts, 
+      logged_in: req.session.logged_in  
+    });
+  } catch (err) {
+    console.error(err);
+    res.status(500).json(err);
+  }
 });
 
 router.get('/login', async (req, res) => {
@@ -25,22 +47,38 @@ const membercontact = await Contact.findOne({
   }
 });
 
-
-
-router.get('/member', async (req, res) => {
-  // sending rendered Handlebars.js template to respod
+router.get('/member', withAuth, async (req, res) => {
   try {
-      const memberData = await Member.findByPk(req.session.member_id)
-      const member = memberData.get({plain:true})
-      res.render('member_page', {
-        logged_in:req.session.logged_in,
-        member
-      });
-  } catch (error) {
-    res.status(500).json(error)
+    const memberData = await Member.findByPk(req.session.member_id, {
+      attributes: { exclude: ['password'] },
+      include: [{ model: Contact }, { model: Role }],
+    });
+
+    const member = memberData.get({ plain: true });
+
+    res.render('member_page', {
+      ...member,
+      logged_in: true
+    });
+  } catch (err) {
+    res.status(500).json(err);
   }
-  
 });
+
+//router.get('/member', async (req, res) => {
+//  // sending rendered Handlebars.js template to respod
+//  try {
+//      const memberData = await Member.findByPk(req.session.member_id)
+//      const member = memberData.get({plain:true})
+//      res.render('member_page', {
+//        logged_in:req.session.logged_in,
+//        member
+//      });
+//  } catch (error) {
+//    res.status(500).json(error)
+//  }
+  
+//});
 
 
 module.exports = router;

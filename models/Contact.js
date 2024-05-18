@@ -12,6 +12,10 @@ Contact.init(
       autoIncrement: true,
       allowNull: false
     },
+    address_type: {
+      type: DataTypes.STRING,
+      allowNull: true
+    },
     address_1: {
       type: DataTypes.STRING,
       allowNull: false
@@ -27,6 +31,10 @@ Contact.init(
     state: {
         type: DataTypes.STRING,
         allowNull: false
+    },
+    zip: {
+      type: DataTypes.STRING,
+      allowNull: true
     },
     country: {
       type: DataTypes.STRING,

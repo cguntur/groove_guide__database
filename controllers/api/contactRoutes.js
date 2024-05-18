@@ -6,10 +6,12 @@ const { Member, Contact }=require("../../models");
 router.post('/', (req, res) => {
     console.log(req.body)
     Contact.create({
+        address_type: req.body.address_type,
         address_1: req.body.address_1,
         address_2: req.body.address_2,
         city: req.body.city,
         state: req.body.state,
+        zip: req.body.zip,
         country: req.body.country,
         member_id: req.session.member_id
     })

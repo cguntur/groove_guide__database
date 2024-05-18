@@ -12,6 +12,7 @@ body {
   background-size: cover;
   min-height: 1000px;
   height: auto;
+  font-family: "Open Sans", sans-serif;
 }
 
 header {
@@ -45,20 +46,25 @@ main {
   margin: 50px;
   padding: 20px;
 }
+main .hide {
+  display: none;
+}
+main .show {
+  display: block;
+}
 main h1 {
   color: #fff;
-  font-size: 45px;
   text-align: center;
+  font-size: 45px;
   margin-bottom: 50px;
 }
 main h2 {
   color: #fff;
-  text-align: center;
   font-size: 35px;
   margin-bottom: 15px;
 }
-main p {
-  font-size: 14px;
+main p, main .default_text {
+  font-size: 18px;
   color: #fff;
 }
 main .button, main .button-primary {
@@ -69,6 +75,9 @@ main .button, main .button-primary {
   padding: 15px;
   background-color: #e8d5df;
 }
+main .button.relative, main .button-primary.relative {
+  position: relative;
+}
 main .wrapper, main .box {
   border: #fff 5px solid;
   border-radius: 10px;
@@ -76,6 +85,17 @@ main .wrapper, main .box {
   padding: 20px;
   margin: 20px;
   position: relative;
+}
+main .wrapper .profileInfo, main .box .profileInfo {
+  padding: 20px;
+}
+main .wrapper .addressBlock, main .box .addressBlock {
+  display: flex;
+  margin: 30px 30px 30px 0;
+}
+main .wrapper .addressBlock .address, main .box .addressBlock .address {
+  padding-right: 30px;
+  padding-bottom: 30px;
 }
 main .wrapper .formField .label, main .box .formField .label {
   color: #fff;
