@@ -1,11 +1,40 @@
 <div class="wrapper">
-    <h1>Welcome {{member.name}}!</h1>
+    <h1>Welcome {{name}}!</h1>
 
-    <p>You will able to access your member pages from your dashboard and also add/update your contact information.</p>
+    <div class="profileInfo">
+        <h2>Profile Information</h2>
+        <p>Email: {{email}}</p>
 
-    {{!--<button id="add-contact-info" class="button">Add your contact information!</button>--}}
+        {{#if contacts}}
+            <div class="addressBlock">
+                {{#each contacts as |contact| }}
+                    <div class="address default_text">
+                        <h3>{{contact.address_type}} Address</h3><br />
+                        {{contact.address_1}}<br />
+                        {{#if contact.address_2}}
+                            {{contact.address_2}}<br />
+                        {{/if}}
+                        {{contact.city}} {{contact.state}} {{contact.country}}
+                    </div>
+                {{/each}}  
 
-    <form class="" id="" name="add-contact-form">
+            </div>
+            <button type="button" class="button add-address relative">Add another address</button>
+
+        {{else}}
+            <button type="button" class="button add-address">Add your address</button>
+        {{/if}}
+    </div>
+
+    <form class="contact-form hide" id="" name="add-contact-form">
+        <div class="formField">
+            <label for="member_address_type" class="label">Address Type</label>
+            <select class="input" id="member_address_type" name="member_address_type">
+                <option value="Business">Business</option>
+                <option value="Home">Home</option>
+                <option value="Shipping">Shipping Address</option>
+            </select>
+        </div>
         <div class="formField">
             <label for="member_address_1" class="label">Address 1</label>
             <input type="text" class="form-control input" id="member_address_1" name="name" required>
@@ -26,12 +55,18 @@
         </div>
 
         <div class="formField">
+            <label for="member_zip" class="label">Zip</label>
+            <input type="text" class="form-control input" id="member_zip" name="name">
+        </div>
+
+        <div class="formField">
             <label for="member_country" class="label">Country</label>
             <input type="text" class="form-control input" id="member_country" name="name">
         </div>
         
         {{!--<input type="submit" value="Submit" />--}}
-        <button class="button" type="submit">Add your contact information!</button>
+        <button class="button" type="submit">Submit</button>
         
     </form>
 </div>
+<script src="/js/member.js"></script>

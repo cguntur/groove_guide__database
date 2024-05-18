@@ -4,7 +4,17 @@ const { Member, Contact }=require("../../models");
 
 // CREATE new contact
 router.post('/', (req, res) => {
-    Contact.create(req.body)
+    console.log(req.body)
+    Contact.create({
+        address_type: req.body.address_type,
+        address_1: req.body.address_1,
+        address_2: req.body.address_2,
+        city: req.body.city,
+        state: req.body.state,
+        zip: req.body.zip,
+        country: req.body.country,
+        member_id: req.session.member_id
+    })
    .then(dbContactData => res.json(dbContactData))
    .catch(err => {
        console.log(err);
@@ -33,3 +43,5 @@ router.put('/:id', (req, res) => {
 
 
 module.exports = router;
+
+
