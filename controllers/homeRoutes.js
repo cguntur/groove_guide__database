@@ -2,9 +2,13 @@ const router = require('express').Router();
 const { Member, Contact, Role } = require('../models');
 const withAuth = require('../utils/auth');
 
-router.get('/', async (req, res) => {
-  // sending rendered Handlebars.js template to respod
+router.get('/', (req, res) => {
+  if (req.session.logged_in) {
+    res.redirect('/member');
+  // sending rendered Handlebars.js template to respond
+  } else {
   res.render('homepage');
+  }
 });
 
 router.get('/contact', async (req, res) => {
