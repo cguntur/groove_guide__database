@@ -69,20 +69,20 @@ router.get('/member', withAuth, async (req, res) => {
   }
 });
 
-//router.get('/member', async (req, res) => {
-//  // sending rendered Handlebars.js template to respod
-//  try {
-//      const memberData = await Member.findByPk(req.session.member_id)
-//      const member = memberData.get({plain:true})
-//      res.render('member_page', {
-//        logged_in:req.session.logged_in,
-//        member
-//      });
-//  } catch (error) {
-//    res.status(500).json(error)
-//  }
+router.get('/memberLibrary', async (req, res) => {
+ // sending rendered Handlebars.js template to respond
+ try {
+     const memberData = await Member.findByPk(req.session.member_id)
+     const member = memberData.get({plain:true})
+     res.render('memberHome', {
+       logged_in:req.session.logged_in,
+       member
+     });
+ } catch (error) {
+   res.status(500).json(error)
+ }
   
-//});
+});
 
 
 module.exports = router;
