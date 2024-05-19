@@ -20,7 +20,7 @@
     <nav>
       <ul>
         <li>
-          <a href="/">Home</a>
+          <a href="/" id="homeButton">Home</a>
         </li>
         <li>
           <a href="/member">Member Access</a>
@@ -44,6 +44,18 @@
       
   </footer>
   <script src="/js/navbar.js"></script>
+  <script>
+        document.getElementById('homeButton').addEventListener('click', function(event) {
+            event.preventDefault();
+            // Check if user is logged in
+            const isLoggedIn = {{#if logged_in}}true{{else}}false{{/if}};
+            if (isLoggedIn) {
+                window.location.replace('/member');
+            } else {
+                window.location.replace('/');
+            }
+        });
+    </script>
 </body>
 
 </html>
