@@ -23,6 +23,15 @@ header {
   box-shadow: 0 1px 8px #D9D9D9;
   background: #000;
 }
+header a {
+  text-decoration: none;
+  color: #fff;
+  font-size: 25px;
+  transition: all 0.3s ease 0s;
+}
+header a:hover {
+  color: #962455;
+}
 header #title {
   color: #fff;
   margin-right: auto;
@@ -45,6 +54,15 @@ header li a:hover {
 main {
   margin: 50px;
   padding: 20px;
+}
+main a {
+  text-decoration: none;
+  color: #fff;
+  font-size: 25px;
+  transition: all 0.3s ease 0s;
+}
+main a:hover {
+  color: #962455;
 }
 main .hide {
   display: none;
