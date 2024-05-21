@@ -8,6 +8,7 @@ const SequelizeStore = require('connect-session-sequelize')(session.Store);
 
 const app = express();
 const PORT = process.env.PORT || 3001;
+const SECRET = process.env.SECRET || 'secret';
 
 const hbs = exphbs.create({ 
   defaultLayout: 'main',
@@ -16,9 +17,11 @@ const hbs = exphbs.create({
 
 // Configure + link session object with sequelize store
 const sess = {
-    secret: 'Super secret secret',
-    cookie: {},
-    resave: false,
+    secret: SECRET,
+    cookie: {
+      expires: 3600000
+    },
+    resave: true,
     saveUninitialized: true,
     store: new SequelizeStore({
       db: sequelize
@@ -39,6 +42,6 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use(routes);
 
 sequelize.sync({ force: false }).then(() => {
-    app.listen(PORT, () => console.log('Now listening'));
+    app.listen(PORT, () => console.log('Now listening', PORT));
 });
   
