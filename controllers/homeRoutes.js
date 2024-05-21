@@ -4,12 +4,17 @@ const withAuth = require('../utils/auth');
 
 router.get('/', (req, res) => {
   if (req.session.logged_in) {
-    res.redirect('/member');
+    res.render('homepage');
   // sending rendered Handlebars.js template to respond
   } else {
   res.render('homepage');
   }
 });
+
+//router.get('/', async (req, res) => {
+//  // sending rendered Handlebars.js template to respond
+//  res.render('homepage');
+//});
 
 router.get('/contact', async (req, res) => {
   try {
@@ -68,21 +73,5 @@ router.get('/member', withAuth, async (req, res) => {
     res.status(500).json(err);
   }
 });
-
-//router.get('/member', async (req, res) => {
-//  // sending rendered Handlebars.js template to respod
-//  try {
-//      const memberData = await Member.findByPk(req.session.member_id)
-//      const member = memberData.get({plain:true})
-//      res.render('member_page', {
-//        logged_in:req.session.logged_in,
-//        member
-//      });
-//  } catch (error) {
-//    res.status(500).json(error)
-//  }
-  
-//});
-
 
 module.exports = router;

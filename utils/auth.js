@@ -1,11 +1,11 @@
 // File: utils/auth.js
 const withAuth = (req, res, next) => {
-  if (req.session.logged_in) {
+  // If the user is not logged in, redirect the request to the login route
+  if (!req.session.logged_in) {
+    res.redirect('/login');
+  } else {
     next();
-    return;
   }
-
-  res.status(401).json({ message: 'You need to be logged in to view this page!' });
 };
 
 module.exports = withAuth;
