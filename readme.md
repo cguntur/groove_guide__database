@@ -9,7 +9,7 @@
 
 ## Images
 
-Screenshot of the first build:
+Screenshot of the first build v1:
 
 ![screen shot of initial build](/public/images/Groove%20Guide%20Database.jpg)
 
