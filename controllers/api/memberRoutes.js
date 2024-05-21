@@ -59,6 +59,7 @@ router.post('/login', async (req, res) => {
       console.log("Logged in user ID: " + req.session.member_id);
       
       res.json({ member: memberData, message: 'You are now logged in!' });
+      res.redirect('/member');
     });
 
   } catch (err) {

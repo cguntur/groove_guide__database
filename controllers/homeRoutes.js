@@ -4,7 +4,7 @@ const withAuth = require('../utils/auth');
 
 router.get('/', (req, res) => {
   if (req.session.logged_in) {
-    res.render('homepage');
+    res.render('homepage', { logged_in: true });
   // sending rendered Handlebars.js template to respond
   } else {
   res.render('homepage');
