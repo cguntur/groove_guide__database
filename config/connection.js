@@ -19,8 +19,8 @@ if (process.env.JAWSDB_URL) {
     {
       host: process.env.DB_HOST || 'localhost',
       dialect: 'mysql',
-      port: process.env.DB_PORT || 3001,
-      logging: true // you can enable logging for debugging if needed
+      port: process.env.DB_PORT || 3306,
+
     }
   );
 }

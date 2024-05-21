@@ -4,17 +4,19 @@ const withAuth = require('../utils/auth');
 
 router.get('/', (req, res) => {
   if (req.session.logged_in) {
-    res.render('homepage');
+    res.render('homepage', {
+      logged_in: req.session.logged_in,
+    }); 
   // sending rendered Handlebars.js template to respond
   } else {
   res.render('homepage');
   }
 });
 
-//router.get('/', async (req, res) => {
-//  // sending rendered Handlebars.js template to respond
-//  res.render('homepage');
-//});
+router.get('/', async (req, res) => {
+ // sending rendered Handlebars.js template to respond
+ res.render('homepage');
+});
 
 router.get('/contact', async (req, res) => {
   try {
