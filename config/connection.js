@@ -8,7 +8,6 @@ if (process.env.JAWSDB_URL) {
   sequelize = new Sequelize(process.env.JAWSDB_URL, {
     dialect: 'mysql',
     protocol: 'mysql',
-    logging: false // you can enable logging for debugging if needed
   });
 } else {
   // Use individual environment variables for local development
@@ -20,7 +19,6 @@ if (process.env.JAWSDB_URL) {
       host: process.env.DB_HOST || 'localhost',
       dialect: 'mysql',
       port: process.env.DB_PORT || 3306,
-
     }
   );
 }
