@@ -11,10 +11,10 @@ router.get('/', (req, res) => {
   }
 });
 
-//router.get('/', async (req, res) => {
-//  // sending rendered Handlebars.js template to respond
-//  res.render('homepage');
-//});
+router.get('/', async (req, res) => {
+ // sending rendered Handlebars.js template to respond
+ res.render('homepage');
+});
 
 router.get('/contact', async (req, res) => {
   try {
@@ -73,5 +73,21 @@ router.get('/member', withAuth, async (req, res) => {
     res.status(500).json(err);
   }
 });
+
+// router.get('/memberLibrary', async (req, res) => {
+//  // sending rendered Handlebars.js template to respond
+//  try {
+//      const memberData = await Member.findByPk(req.session.member_id)
+//      const member = memberData.get({plain:true})
+//      res.render('memberHome', {
+//        logged_in:req.session.logged_in,
+//        member
+//      });
+//  } catch (error) {
+//    res.status(500).json(error)
+//  }
+  
+// });
+
 
 module.exports = router;
