@@ -3,9 +3,9 @@ require('dotenv').config();
 
 let sequelize;
 
-if (process.env.DATABASE_URL) {
+if (process.env.JAWSDB_URL) {
   // Use DATABASE_URL if set, which is typical for production environments like Heroku
-  sequelize = new Sequelize(process.env.DATABASE_URL, {
+  sequelize = new Sequelize(process.env.JAWSDB_URL, {
     dialect: 'mysql',
     protocol: 'mysql',
     logging: false // you can enable logging for debugging if needed
